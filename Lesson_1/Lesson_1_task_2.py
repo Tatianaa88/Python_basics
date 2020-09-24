@@ -14,4 +14,4 @@ if len(str(time_hour)) < 2:
 if len(str(rest_sec)) < 2:
     rest_sec = '0' + str(rest_sec)
 
-print(f'{time_sec} seconds are converted to {time_hour} : {rest_min} : {rest_sec}')
+print(f'{time_sec} seconds are converted to {time_hour}:{rest_min}:{rest_sec} (hh:mm:ss).')
