@@ -13,7 +13,7 @@
 # Ответ: на 6-й день спортсмен достиг результата — не менее 3 км.
 
 a = 2
-b = 10
+b = 3
 i = 1
 
 print(f'Day {i}: {a}')
@@ -23,4 +23,4 @@ while a < b:
     i += 1
     print(f'Day {i}: {a}')
 
-print(f'On the {i}th day the sportsman ran more than {b} km.')
+print(f'On day {i} the sportsman ran more than {b} km.')
