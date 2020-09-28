@@ -7,7 +7,5 @@ new = user_string.split()
 n = 1
 
 for i in new:
-    if len(i) > 10
-        i =
-    print(f'{n}. {i}')
+    print(f'{n}. {i[:10]}')
     n += 1
