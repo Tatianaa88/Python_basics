@@ -9,7 +9,6 @@ n = 1
 
 while True:
     user_choice = input('Would you like to enter products (y/n)? ').lower()
-
     if user_choice == 'n':
         break
     if user_choice == 'y':
@@ -19,18 +18,13 @@ while True:
         unit_measure = input('Please enter units of measure: ')
         product_desc = {}
         product_desc.update({"item": product, "price": price, "quantity": quantity, "units of measure": unit_measure})
-        item_desc = product_desc
-        item = (n, item_desc)
+        item = (n, product_desc)
         n += 1
         items_list.append(item)
         continue
     else:
         print(f'You entered "{user_choice}" when "y" or "n" are expected.')
         continue
-
-# items_list = [(1, {'item': 'laptop', 'price': '2000', 'quantity': '4', 'units of measure': 'units'}),
-#               (2, {'item': 'scanner', 'price': '200', 'quantity': '5', 'units of measure': 'units'}),
-#               (3, {'item': 'printer', 'price': '200', 'quantity': '6', 'units of measure': 'units'})]
 
 while True:
     user_request = input('Would you like to get an overview (y/n)?')
@@ -47,9 +41,9 @@ while True:
             price_group.append(items_list[i][1].get('price'))
             amn_group.append(items_list[i][1].get('quantity'))
             unit_group.append(items_list[i][1].get('units of measure'))
-            analysis = {'item': items_group, 'price': price_group, 'quantity': amn_group, 'units of measure': unit_group}
+            summary = {'item': items_group, 'price': price_group, 'quantity': amn_group, 'units of measure': unit_group}
         print('Here is your overview: \n ')
-        print(analysis)
+        print(summary)
         break
     else:
         print(f'You entered "{user_request}" when "y" or "n" are expected. Please try again.')

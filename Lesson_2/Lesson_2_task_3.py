@@ -12,7 +12,7 @@ while True:
     if user_choice > 12:
         print(f'You entered incorrect serial number: {user_choice}.')
     elif user_choice <= 12:
-        print(f'Here is the month you selected: {months[user_choice - 1]}')
+        print(f'Here is the month you selected: {months[user_choice - 1]}.')
         break
 
 # dictionary solution
@@ -26,5 +26,5 @@ while True:
     if user_choice > 12:
         print(f'You entered incorrect serial number: {user_choice}.')
     elif user_choice <= 12:
-        print(f'Here is the month you selected: {months.get(user_choice)}')
+        print(f'Here is the month you selected: {months.get(user_choice)}.')
         break

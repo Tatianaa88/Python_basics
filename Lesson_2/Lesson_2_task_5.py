@@ -9,7 +9,7 @@
 # Набор натуральных чисел можно задать непосредственно в коде, например, my_list = [7, 5, 3, 3, 2].
 
 rating = [7, 5, 4, 4, 2]
-print(f'Current rating is {rating}')
+print(f'Current rating is {rating}.')
 
 while True:
     user_rating = input('Please enter you rating from 1 to 9. When done enter "q". ')
@@ -18,18 +18,18 @@ while True:
         break
     elif int(user_rating) >= rating[0]:
         rating.insert(0, int(user_rating))
-        print(f'New rating is {rating}')
+        print(f'New rating is {rating}.')
         continue
     elif int(user_rating) <= rating[-1]:
         rating.append(int(user_rating))
-        print(f'New rating is {rating}')
+        print(f'New rating is {rating}.')
         continue
     for i in range(len(rating)):
         if rating[i] == int(user_rating):
             rating.insert(i + 1, int(user_rating))
-            print(f'New rating is {rating}')
+            print(f'New rating is {rating}.')
             break
         elif rating[i] > int(user_rating) > rating[i + 1]:
             rating.insert(i + 1, int(user_rating))
-            print(f'New rating is {rating}')
+            print(f'New rating is {rating}.')
             break
