@@ -28,4 +28,3 @@ while True:
     elif user_choice <= 12:
         print(f'Here is the month you selected: {months.get(user_choice)}')
         break
-
