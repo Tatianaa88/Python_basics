@@ -5,17 +5,17 @@
 # Второй — более сложная реализация без оператора **, предусматривающая использование цикла.
 
 
-# exp = lambda x, y: x ** y # via operator **
-# print(exp(2,-3))
+# via operator **
+exp = lambda x, y: x ** y
+print(exp(2, -3))
 
 
-def exponential(x, y): # via 'for' loop
-    n = 1
-    while n <= abs(y):
-        exp = x * x
-        n += 1
-    result = 1 / exp
-    return result
+def exponential(x, y):
+    # via 'for' loop
+    result = 1
+    for i in range(abs(y)):
+        result *= x
+    return 1/result
 
 
 print(exponential(2, -3))
