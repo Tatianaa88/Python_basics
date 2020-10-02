@@ -4,9 +4,8 @@
 
 
 def user_data(name, last_name, year_birth, city, email, phone):
-    personal_data = f'The user name is {name}, last name is {last_name}, year of birth is {year_birth},' \
-        f' city is {city}, email is {email}, phone is {phone}.'
-    return personal_data
+    return f'The user name is {name}, last name is {last_name}, year of birth is {year_birth}, city is {city}, ' \
+        f'email is {email}, phone is {phone}.'
 
 
 print(user_data(name='Anna', last_name='Aneeva', year_birth=1900,

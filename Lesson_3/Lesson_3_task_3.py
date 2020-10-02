@@ -6,8 +6,7 @@ def my_func(a, b, c):
     my_list = [a, b, c]
     for i in my_list:
         if min(my_list) < i < max(my_list):
-            result = max(my_list) + i
-            return result
+            return max(my_list) + i
 
 
 print(my_func(3, 5, 6))

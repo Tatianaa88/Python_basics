@@ -6,12 +6,16 @@
 
 
 # via operator **
+
+
 exp = lambda x, y: x ** y
 print(exp(2, -3))
 
 
+# via 'for' loop
+
+
 def exponential(x, y):
-    # via 'for' loop
     result = 1
     for i in range(abs(y)):
         result *= x

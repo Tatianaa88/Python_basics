@@ -6,18 +6,21 @@
 
 # via function
 
+
 def int_func(usr_words):
-    words = usr_words.title()
-    return words
+    return usr_words.title()
 
 
-user_request = input('Please enter space separated words: ')
-print(int_func(user_request))
+print(int_func(input('Please enter space separated words: ')))
 
 
-# via lambda
+# via lambda 1
+
 user_req = input('Please enter space separated words: ')
-
-
-words = lambda usr_words : usr_words.title()
+words = lambda usr_words: usr_words.title()
 print(words(user_req))
+
+
+# via lambda 2
+
+print((lambda usr_words: usr_words.title())(input('Please enter space separated words: ')))
