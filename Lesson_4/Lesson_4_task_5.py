@@ -6,5 +6,4 @@
 from functools import reduce
 
 my_list = list(range(100, 1001))
-new_list = [i for i in my_list if i % 2 == 0]
-print(reduce(lambda num1, num2: num1 * num2, new_list))
+print(reduce(lambda num1, num2: num1 * num2, [i for i in my_list if i % 2 == 0]))
