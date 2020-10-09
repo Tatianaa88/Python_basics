@@ -3,12 +3,12 @@
 # вывести фамилии этих сотрудников. Выполнить подсчет средней величины дохода сотрудников.
 
 salary_2 = []
+total_salary = 0
 with open('salary.txt') as file:
     my_list = file.readlines()
+    print('Employees with the salary more than 20 000 USD: \n')
     for i in my_list:
-        if int((i.split()[1])) > 20000:
-            salary_2.append(i.strip())
-    print(f'Employees with the salary more than 20 000 USD: {" ,".join(salary_2)}.')
-    for i in my_list:
-        avrg_salary =
-
+        if int((i.split()[1])) < 20000:
+            print(i.strip())
+        total_salary += int(i.split()[1])
+    print(f'\nAverage salary is: {total_salary / int(len(my_list))}')
