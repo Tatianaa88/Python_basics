@@ -8,11 +8,11 @@
 
 class Road:
     def __init__(self, length, width):
-        self.length = length
-        self.width = width
+        self._length = length
+        self._width = width
 
     def cover_mass(self):
-        mass = self.length * self.width
+        mass = self._length * self._width
         return mass
 
 
