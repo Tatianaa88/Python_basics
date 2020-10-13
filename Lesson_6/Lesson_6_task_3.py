@@ -25,8 +25,11 @@ class Position(Worker):
 
 employee = Position('Tatiana', 'Ageeva', 'SDE 1', {'wage': 10000, 'bonus': 5000})
 print(employee.get_full_name())
+print(employee.position)
 print(employee.get_total_income())
+
 
 employee_1 = Position('Mikhail', 'Ageev', 'SDE 2', {'wage': 20000, 'bonus': 10000})
 print(employee_1.get_full_name())
+print(employee_1.position)
 print(employee_1.get_total_income())

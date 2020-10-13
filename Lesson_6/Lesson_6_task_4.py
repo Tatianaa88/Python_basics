@@ -14,33 +14,51 @@ class Car:
         self.is_police = is_police
 
     def go(self):
-        print(f'{self.name} is going.')
+        return f'{self.name} is going.'
 
     def stop(self):
-        print(f'{self.name} has stopped.')
+        return f'{self.name} has stopped.'
 
     def turn(self, direction):
-        print(f'{self.name} has turned {direction}.')
+        return f'{self.name} has turned {direction}.'
 
     def show_speed(self):
-        print(f'The current speed is {self.speed}.')
+        return f'The current speed is {self.speed}.'
 
 
 class TownCar(Car):
     def show_speed(self):
         if self.speed > 60:
-            print(f"Your current speed is {self.speed}. You're speeding, please slow down.")
+            return f'{self.speed}. {self.name} is speeding, please slow down.'
 
 
-class SportkCar(Car):
+class SportCar(Car):
     pass
 
 
 class WorkCar(Car):
     def show_speed(self):
         if self.speed > 40:
-            print(f"Your current speed is {self.speed}. You're speeding, please slow down.")
+            return f"Your current speed is {self.speed}. You're speeding, please slow down."
 
 
 class PoliceCar(Car):
-    pass
+    def police(self):
+        if self.is_police is True:
+            return f'This is a police car.'
+
+
+auto_1 = Car(60, 'white', 'Volkswagen', False)
+print(auto_1.go(), auto_1.show_speed())
+
+auto_2 = TownCar(70, 'green', 'Reno', False)
+print(f'{auto_2.go()}The current speed is {auto_2.show_speed()}')
+
+auto_3 = WorkCar(50, 'red', 'BMW', False)
+print(f'{auto_3.go()}The color is {auto_3.color}. {auto_3.show_speed()}')
+
+auto_4 = PoliceCar(50, 'black', 'Mercedes', True)
+print(auto_4.go(), auto_4.police())
+
+auto_5 = SportCar(60, 'yellow', 'Lamborghini', False)
+print(f'{auto_5.go()} The color is {auto_5.color}.')
