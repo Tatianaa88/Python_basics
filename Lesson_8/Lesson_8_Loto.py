@@ -6,37 +6,37 @@ class LotoCard:
         self.card = [['  ','  ','  ','  ','  ','  ','  ','  ','  '],
                      ['  ','  ','  ','  ','  ','  ','  ','  ','  '],
                      ['  ','  ','  ','  ','  ','  ','  ','  ','  ']]
+        self.my_list = []
 
-
-
-    def fillout_card(self):
+    def create_number(self):
         num_counter = 1
-        my_list = []
         while num_counter < 16:
             number = random.randint(1, 90)
-            if number in my_list:
+            if number in self.my_list:
                 continue
-            my_list.append(number)
+            self.my_list.append(number)
             for i in range(9):
                 similar_num_counter = 0
-                for item in my_list:
+                for item in self.my_list:
                     upper_boarder = (i + 1) * 10
                     if i == 8:
                         upper_boarder = 91
                     if i * 10 <= item < upper_boarder:
                         similar_num_counter += 1
                 if similar_num_counter > 3:
-                    my_list.pop()
+                    self.my_list.pop()
             num_counter += 1
-        my_list.sort()
-        for el in my_list:
+        self.my_list.sort()
+
+    def fillout_card(self):
+        for el in self.my_list:
             i = 0
             while i < 9:
                 upper_boarder = (i + 1) * 10
                 if i == 8:
                     upper_boarder = 91
                 if i * 10 <= el < upper_boarder:
-                    counter = [[],[],[]]
+                    counter = [[], [], []]
                     for j, line in enumerate(self.card):
                         for item in self.card[j]:
                             if item != '  ':
@@ -64,12 +64,12 @@ class LotoCard:
                             i -= 1
                             continue
                 i += 1
-        # for i in self.card:
-        #     print(i)
 
-
-
-
+class Game(LotoCard):
+    def start(self):
+        self.create_number()
+        self.fillout_card()
+        self.draw_card()
 
     def draw_card(self):
         print('-'* 9 + self.player + '-'* 10)
@@ -82,12 +82,12 @@ class LotoCard:
                     print('\n'.strip())
         print('-' * 27)
 
+card1 = Game('-Player-')
+card2 = Game('Computer')
+# card1.fillout_card()
+# card1.draw_card()
+# card2.fillout_card()
+# card2.draw_card()
 
-card1 = LotoCard('-Player-')
-card2 = LotoCard('Computer')
-
-
-card1.fillout_card()
-card1.draw_card()
-card2.fillout_card()
-card2.draw_card()
+card1.start()
+card2.start()
